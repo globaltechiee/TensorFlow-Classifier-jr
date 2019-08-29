@@ -44,7 +44,7 @@ async function app() {
   classifier.addExample(activation, classId);
 };
 
-  // When clicking a button, add an example for that class.
+// When clicking a button, add an example for that class.
   document.getElementById('class-a').addEventListener('click', () => addExample(0));
   document.getElementById('class-b').addEventListener('click', () => addExample(1));
   document.getElementById('class-c').addEventListener('click', () => addExample(2));
@@ -60,10 +60,9 @@ async function app() {
       document.getElementById('console').innerText = `
         prediction: ${classes[result.classIndex]}\n
         probability: ${result.confidences[result.classIndex]}
-        `;
+      `;
     }
-    // Give some breathing room by waiting for the next animation frame to
-    // fire.
+
     await tf.nextFrame();
   }
 }
